@@ -19,7 +19,7 @@
 FROM alpine:3.11
 MAINTAINER Josef Cacek
 
-RUN apk add -U --no-cache bash curl ruby ruby-io-console ruby-json git py-pip \
+RUN apk add -U --no-cache bash curl openssl ruby ruby-io-console ruby-json git py-pip \
     && apk add -U --no-cache --virtual build_deps \
        build-base ruby-dev libc-dev libffi-dev linux-headers \
     && gem install travis \
