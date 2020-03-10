@@ -16,13 +16,13 @@
 # limitations under the License.
 #
 
-FROM alpine:3.8
+FROM alpine:3.11
 MAINTAINER Josef Cacek
 
-RUN apk add -U --no-cache bash ruby ruby-io-console ruby-json git py-pip \
+RUN apk add -U --no-cache bash curl ruby ruby-io-console ruby-json git py-pip \
     && apk add -U --no-cache --virtual build_deps \
        build-base ruby-dev libc-dev libffi-dev linux-headers \
-    && gem install travis --no-rdoc --no-ri \
+    && gem install travis \
     && pip install docker-scripts \
     && apk del build_deps
 
